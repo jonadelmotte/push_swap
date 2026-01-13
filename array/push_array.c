@@ -49,57 +49,50 @@ static void	copy_integer(int *src, t_list *copy, int size)
 	}
 }
 
-t_list	*fre_a(t_list *a)
+t_list	*push(t_list *rm, t_list *psh)
 {
-	int	*temp;
+	int	size;
+	int	*array;
+
+	size = strlen_list(psh);
+	array = malloc(sizeof(int) * size);
+	if (!array)
+		return (NULL);
+	copy_list(psh, array);
+	if (psh)
+		free(psh);
+	psh = malloc(sizeof(t_list) * (size + 1));
+	if (!psh)
+		return (NULL);
+	psh[0].value = rm[0].value;
+	psh[0].position = 1;
+	copy_integer(array, psh, size);
+	free(array);
+	return (psh);
+}
+
+t_list	*push_back(t_list *rm)
+{
+	int	*array;
 	int	size;
 	int	i;
 
 	i = 0;
-	size = strlen_list(a);
-	temp = malloc(sizeof(int) * size);
-	if (!temp)
+	size = strlen_list(rm);
+	array = malloc(sizeof(int) * size);
+	if (!array)
 		return (NULL);
-	copy_list(a, temp);
-	free(a);
-	a = malloc(sizeof(t_list) * (size - 1));
-	if (!a)
+	copy_list(rm, array);
+	free(rm);
+	rm = ft_calloc(sizeof(t_list), size);
+	if (!rm)
 		return (NULL);
 	while (i < size - 1)
 	{
-		a[i].value = temp[i + 1];
-		a[i].position = i + 1;
-//		printf("value1 = %i, position1 = %i\n", a[i].value, a[i].position);
+		rm[i].value = array[i + 1];
+		rm[i].position = i + 1;
 		i++;
 	}
-	free(temp);
-	return (a);
-}
-
-t_list	*pb_b(t_list *a, t_list *b)
-{
-	int	*temp;
-	int	size;
-
-	size = strlen_list(b);
-	temp = malloc(sizeof(int) * size);
-	if (!temp)
-		return (NULL);
-	copy_list(b, temp);
-	free(b);
-	b = malloc(sizeof(t_list) * (size + 1));
-	if (!b)
-		return (NULL);
-	b[0].value = a[0].value;
-	b[0].position = 1;
-	copy_integer(temp, b, size);
-	free(temp);
-//	a = free_a(a);
-/*	int	i = 0;
-	while (a[i].position)
-	{
-		printf("value1 = %i, position1 = %i\n", a[i].value, a[i].position);
-		i++;
-	}*/
-	return (b);
+	free(array);
+	return (rm);
 }

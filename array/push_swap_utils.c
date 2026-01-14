@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 11:00:02 by jdelmott          #+#    #+#             */
+/*   Updated: 2026/01/14 15:20:00 by jdelmott         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_atoi(const char *nptr)
@@ -10,7 +22,7 @@ int	ft_atoi(const char *nptr)
 	nbr = 0;
 	i = 0;
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-			i++;
+		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
@@ -44,9 +56,9 @@ size_t	ft_strlen(const char *s)
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*tab;
-	long int		n2;
-	long int		s2;
+	void		*tab;
+	long int	n2;
+	long int	s2;
 
 	n2 = (long int)nmemb;
 	s2 = (long int)size;
@@ -71,4 +83,13 @@ void	ft_bzero(void *s, size_t n)
 		t[m] = '\0';
 		m++;
 	}
+}
+int	strlen_list(t_list *list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i].position)
+		i++;
+	return (i);
 }

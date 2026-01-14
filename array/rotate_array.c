@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelmott <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:15:13 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/12 19:46:58 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/14 11:51:34 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,28 @@ void	rb(t_list *a)
 
 void	rr(t_list *a, t_list *b)
 {
-	ra(a);
-	ra(b);
+	int	i;
+	int	begin;
+	int	size;
+
+	size = strlen_list(a);
+	i = 0;
+	begin = a[i].value;
+	while (i < size - 1)
+	{
+		a[i].value = a[i + 1].value;
+		i++;
+	}
+	a[i].value = begin;
+	size = strlen_list(b);
+	i = 0;
+	begin = b[i].value;
+	while (i < size - 1)
+	{
+		b[i].value = b[i + 1].value;
+		i++;
+	}
+	b[i].value = begin;
 	write(1, "rr\n", 3);
 }
 
@@ -89,7 +109,24 @@ void	rrb(t_list *a)
 
 void	rrr(t_list *a, t_list *b)
 {
-	rra(a);
-	rra(b);
+	int	end;
+	int	size;
+
+	size = strlen_list(a) - 1;
+	end = a[size].value;
+	while (size)
+	{
+		a[size].value = a[size - 1].value;
+		size--;
+	}
+	a[size].value = end;
+	size = strlen_list(b) - 1;
+	end = b[size].value;
+	while (size)
+	{
+		b[size].value = b[size - 1].value;
+		size--;
+	}
+	b[size].value = end;
 	write(1, "rrr\n", 4);
 }

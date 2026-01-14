@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 09:33:19 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/14 15:56:36 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/14 17:36:11 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ int	main(int argc, char *argv[])
 	int		i;
 
 	i = 0;
+	if (argc == 1)
+		return (0);
 	listA = parsing(argc, argv);
 	size = strlen_list(listA); // haha tt changer dans le parcing je crois bien.
 	listB = init_b(size);
-	//algo_verif(size, listA, listB);
-	pb(listA, listB);
-	while (listA[i].position)
+	algo_verif(size, listA, listB);
+	/*while (listA[i].position)
 	{
 		printf("value1 = %i, position1 = %i\n", listA[i].value,
 			listA[i].position);
@@ -50,7 +51,7 @@ int	main(int argc, char *argv[])
 		printf("value2 = %i, position2 = %i\n", listB[i].value,
 			listB[i].position);
 		i++;
-	}
+	}*/
 	/*1if (listA)
 		free(listA);
 	if (listB)

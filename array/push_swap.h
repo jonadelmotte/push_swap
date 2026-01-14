@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/14 15:28:04 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/14 19:14:27 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,11 @@ void	smart_rotate(t_list *a, int schr);
 int		find_smaller(t_list *a);
 int		find_biggest(t_list *a);
 void	algo_test(t_list *a, t_list *b);
+void	debug_rotate(t_list *a, int schr);
+
+// finder
+int find_smart(t_list *a, int begin, int end);
+void    divide(t_list *a, t_list *b);
 
 // push swap visualiseur
 // raditz (pas suffisant)

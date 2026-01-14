@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:11 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/14 15:29:08 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/14 19:14:07 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	parsing_single(char *argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (!((argv[i] >= '0' && argv[i] <= '9') || argv[i] == ' '
+		if (!(ft_isdigit(argv[i]) || argv[i] == ' '
 				|| argv[i] == '-' || argv[i] == '+'))
 		{
 			write(1, "Error\n", 6);
@@ -29,11 +29,11 @@ static void	parsing_single(char *argv)
 		{
 			while (argv[i] == '-' || argv[i] == '+')
 			{
-				if (argv[i] >= '0' && argv[i] <= '9')
+				if (ft_isdigit(argv[i]))
 					break ;
 				i++;
 			}
-			if (!(argv[i] >= '0' && argv[i] <= '9'))
+			if (!(ft_isdigit(argv[i])))
 			{
 				write(1, "Error\n", 6);
 				exit(1);
@@ -55,7 +55,7 @@ static void	parsing_verif(int argc, char *argv[])
 	{
 		while (argv[i])
 		{
-			parsing_single(argv[i]);
+			parsing_single(argv[i]);// a reverifier (1 2 3 "4 6 8 2")
 			i++;
 		}
 	}
@@ -129,12 +129,12 @@ void	number_repeat(t_list *a)
 		{
 			if (a[i].value == a[j].value)
 			{
+				free(a);
 				write(1, "Error\n", 6);
 				exit(1);
 			}
 			j++;
 		}
 		i++;
-
 	}
 }

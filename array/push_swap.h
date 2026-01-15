@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 13:36:47 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:07:58 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	rotate(t_list *a);
 void	ra(t_list *a);
 void	rb(t_list *a);
 void	rr(t_list *a, t_list *b);
-void	revers_rotate(t_list *a);
 
+void	revers_rotate(t_list *a);
 void	rra(t_list *a);
 void	rrb(t_list *a);
 void	rrr(t_list *a, t_list *b);
@@ -94,7 +94,6 @@ void    sort_A(t_list *a);
 // finder
 int find_sorted(t_list *a, int begin, int end);
 int    exist(t_list *a, int begin, int end);
-//void    divide(t_list *a, t_list *b);
 
 // push swap visualiseur
 // raditz (pas suffisant)

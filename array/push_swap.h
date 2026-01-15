@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/14 19:14:27 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:36:47 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 {
 	int	value;
 	int	position;
+	int	size;
 }		t_list;
 
 // utils(libft)
@@ -46,14 +47,20 @@ t_list	*init_split(char *split[], char *data);
 void	number_repeat(t_list *a);
 
 // fonctions de trie
+void	swap(t_list *a);
 void	sa(t_list *a);
 void	sb(t_list *a);
 void	ss(t_list *a, t_list *b);
+
 void	pb(t_list *a, t_list *b);
 void	pa(t_list *a, t_list *b);
+
+void	rotate(t_list *a);
 void	ra(t_list *a);
 void	rb(t_list *a);
 void	rr(t_list *a, t_list *b);
+void	revers_rotate(t_list *a);
+
 void	rra(t_list *a);
 void	rrb(t_list *a);
 void	rrr(t_list *a, t_list *b);
@@ -68,14 +75,26 @@ void	five(t_list *a, t_list *b);
 
 // algo
 void	smart_rotate(t_list *a, int schr);
+void	smart_rotate_B(t_list *a, int schr);
 int		find_smaller(t_list *a);
 int		find_biggest(t_list *a);
+
 void	algo_test(t_list *a, t_list *b);
 void	debug_rotate(t_list *a, int schr);
+void    algo_big(t_list *a, t_list *b);
+void    sort_B(t_list *a, t_list *b, int pushed);
+void    push_back(t_list *a, t_list *b);
+
+// sort
+int	find_next_smallest(t_list *a, int last_smallest);
+int	find_next_biggest(t_list *a, int last_biggest);
+void    sort_A(t_list *a);
+
 
 // finder
-int find_smart(t_list *a, int begin, int end);
-void    divide(t_list *a, t_list *b);
+int find_sorted(t_list *a, int begin, int end);
+int    exist(t_list *a, int begin, int end);
+//void    divide(t_list *a, t_list *b);
 
 // push swap visualiseur
 // raditz (pas suffisant)

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:03:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/14 19:14:19 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:03:32 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	smart_rotate(t_list *a, int schr)
 
 	i = 0;
 	size = strlen_list(a) / 2;
-	debug_rotate(a, schr);
 	while (a[i].value != schr)
 		i++;
 	if (a[i].position - size <= 0)
@@ -42,6 +41,27 @@ void	smart_rotate(t_list *a, int schr)
 	{
 		while (a[0].value != schr)
 			rra(a);
+	}
+}
+
+void	smart_rotate_B(t_list *a, int schr)
+{
+	int	size;
+	int	i;
+
+	i = 0;
+	size = strlen_list(a) / 2;
+	while (a[i].value != schr)
+		i++;
+	if (a[i].position - size <= 0)
+	{
+		while (a[0].value != schr)
+			rb(a);
+	}
+	else
+	{
+		while (a[0].value != schr)
+			rrb(a);
 	}
 }
 
@@ -90,6 +110,6 @@ void	debug_rotate(t_list *a, int schr)
 			return ;
 		i++;
 	}
-	write(1, "jona t'a merde\n", 15);
+	write(1, "jona t'a merde (smart_rotate)\n", 15);
 	exit (0);
 }

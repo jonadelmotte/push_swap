@@ -6,47 +6,69 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:55:51 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/14 19:14:02 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:28:44 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int find_smart(t_list *a, int begin, int end)
+void    algo_big(t_list *a, t_list *b)
 {
-    int i;
-    int found_up;
-    int found_down;
+    int divided;
+    int begin;
+    int end;
     int size;
+    int i;
 
-    size = strlen_list(a) - 1;
-    i = 0;
-    while(a[i].position)
+    i = 1;
+    size = strlen_list(a);
+    divided = (size / 5) + (size % 5);
+    begin = 1;
+    end = divided;
+    while (begin < size + 1)
     {
-        if (a[i].value >= begin && a[i].value <= end)
+        while (exist(a, begin, end) == 1)
         {
-            found_up = a[i].value;
-            printf("found_up = %i\n", found_up);
-            break;
+            smart_rotate(a, find_sorted(a, begin, end));
+            sort_B(a, b, a[0].value);
         }
-        i++;
+        push_back(a, b);
+        end += divided - (size % 5);
+        begin += divided - (size % 5);
     }
-    while(size > 0)
-    {
-        if (a[size].value >= begin && a[size].value <= end)
-        {
-            found_down = a[size].value;
-            printf("found_down = %i\n", found_down);
-            break;
-        }
-        size--;
-    }
-    if ((a[i].position - (strlen_list(a) / 2)) + (a[size].position - (strlen_list(a) / 2)) <= 0)
-        return (found_up);
-    return (found_down);
+    printf("begin = %i\n", begin);
 }
 
-void    divide(t_list *a, t_list *b)
+void    sort_B(t_list *a, t_list *b, int pushed)
+{
+    int i;
+
+    i = 0;
+    //while (b[i].value != find_next_biggest(b, pushed))
+    //    rb(b);
+    smart_rotate_B(b, find_next_biggest(b, pushed));
+    pb(a, b);
+}
+
+void    push_back(t_list *a, t_list *b)
+{
+    smart_rotate_B(b, find_biggest(b));
+    smart_rotate(a, find_next_biggest(a, find_smaller(b)));
+    while (b[0].position)
+    {
+        pa(a, b);
+    }
+}
+
+/*int find_smart(t_list *a, int size)
+{
+    int i;
+
+    i = 0;
+    while (a[i].size !=)
+}*/
+
+/*void    divide(t_list *a, t_list *b)
 {
     int begin;
     int end;
@@ -74,4 +96,4 @@ void    divide(t_list *a, t_list *b)
         end += diviser;
         i = 0;
     }
-}
+}*/

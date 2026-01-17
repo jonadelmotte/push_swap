@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:55:51 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 15:14:43 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:08:11 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	algo_big(t_list *a, t_list *b)
 	int	begin;
 	int	end;
 	int	size;
-	int	i;
 
-	i = 1;
 	size = strlen_list(a);
 	divided = (size / 5) + (size % 5);
 	begin = 1;
@@ -37,7 +35,6 @@ void	algo_big(t_list *a, t_list *b)
 		begin += divided - (size % 5);
 	}
 	smart_rotate(a, find_smaller(a));
-	printf("begin = %i\n", begin);
 }
 
 void	sort_B(t_list *a, t_list *b, int pushed)

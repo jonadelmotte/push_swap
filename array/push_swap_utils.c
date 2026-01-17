@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:02 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 11:45:28 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:00:58 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	strlen_list(t_list *list)
 	int	i;
 
 	i = 0;
-	while (list[i].position)
+	while (list[i].exist == 1)
 		i++;
 	return (i);
 }

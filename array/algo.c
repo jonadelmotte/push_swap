@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:03:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 13:03:32 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:01:59 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	smart_rotate(t_list *a, int schr)
 
 	i = 0;
 	size = strlen_list(a) / 2;
+	debug_rotate(a, schr);
 	while (a[i].value != schr)
 		i++;
 	if (a[i].position - size <= 0)
@@ -72,7 +73,7 @@ int	find_smaller(t_list *a)
 
 	i = 0;
 	smaller = a[i].value;
-	while (a[i].position)
+	while (a[i].exist == 1)
 	{
 		if (a[i].value < smaller)
 			smaller = a[i].value;
@@ -88,7 +89,7 @@ int	find_biggest(t_list *a)
 
 	i = 0;
 	biggest = a[i].value;
-	while (a[i].position)
+	while (a[i].exist == 1)
 	{
 		if (a[i].value > biggest)
 			biggest = a[i].value;
@@ -104,7 +105,7 @@ void	debug_rotate(t_list *a, int schr)
 	i = 0;
 	if (a[i].value == schr)
 			return ;
-	while (a[i].position && a[i].value != schr)
+	while (a[i].position)
 	{
 		if (a[i].value == schr)
 			return ;

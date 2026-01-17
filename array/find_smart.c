@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:16:40 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 12:25:44 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:19:37 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int	find_up(t_list *a, int begin, int end)
 	int	found_up;
 
 	i = 0;
-	while (a[i].position)
+	while (a[i].exist == 1)
 	{
 		if (a[i].size >= begin && a[i].size <= end)
 		{
-			found_up = a[i].value;
+			found_up = i;
 			return (found_up);
 		}
 		i++;
@@ -41,7 +41,7 @@ static int	find_down(t_list *a, int begin, int end)
 	{
 		if (a[size].size >= begin && a[size].size <= end)
 		{
-			found_down = a[size].value;
+			found_down = size;
 			return (found_down) ;
 		}
 		size--;
@@ -57,7 +57,7 @@ int	find_sorted(t_list *a, int begin, int end)
 
 	found_up = find_up(a, begin, end);
 	found_down = find_down(a, begin, end);
-	if ((a[0].position - (strlen_list(a) / 2)) + (a[strlen_list(a)].position
+	if ((a[found_up].position - (strlen_list(a) / 2)) + (a[found_down].position
 			- (strlen_list(a) / 2)) <= 0)
 		return (found_up);
 	return (found_down);
@@ -68,7 +68,7 @@ int    exist(t_list *a, int begin, int end)
     int i;
 
     i = 0;
-    while (a[i].position)
+    while (a[i].exist == 1)
     {
         if (a[i].size >= begin && a[i].size <= end)
             return (1);

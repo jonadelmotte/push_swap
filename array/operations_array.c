@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:19:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 11:30:07 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 11:55:48 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ void	push(t_list *a, t_list *b)
 	int	i;
 
 	i = 0;
-	while (b[i].position)
-		i++;
 	b[i].position = i + 1;
+	b[i].exist = 1;
 	while (i > 0)
 	{
 		b[i].value = b[i - 1].value;
@@ -65,6 +64,7 @@ void	push(t_list *a, t_list *b)
 		i++;
 	}
 	a[i - 1].position = 0;
+	a[i - 1].exist = 0;
 }
 void	pb(t_list *a, t_list *b)
 {

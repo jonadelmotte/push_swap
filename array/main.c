@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 09:33:19 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 13:36:45 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:14:19 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 static t_list	*init_b(int size)
 {
 	t_list	*list;
+	int	i;
 
+	i = 0;
 	list = malloc(sizeof(t_list) * size);
 	if (!list)
 		exit(1);
-	list[0].position = 0;
-	list[0].value = 0;
+	while (i <= size)
+	{
+		list[i].exist = 0;
+		i++;
+	}
 	return (list);
 }
 
@@ -41,16 +46,17 @@ int	main(int argc, char *argv[])
 	algo_verif(size, listA, listB);
 	/*while (listA[i].position)
 	{
-		printf("value1 = %i, position1 = %i, size1 = %i\n", listA[i].value,
-			listA[i].position, listA[i].size);
+		i++;
+		printf("value1 = %i, position1 = %i, size1 = %i, exist1 = %i\n", listA[i].value,
+			listA[i].position, listA[i].size, listA[i].exist);
 		i++;
 	}
 	i = 0;
 	printf("\n");
-	while (listB[i].position)
+	while (listB[i].exist)
 	{
-		printf("value2 = %i, position2 = %i\n", listB[i].value,
-			listB[i].position);
+		printf("value2 = %i, position2 = %i, exist2 = %i\n", listB[i].value,
+			listB[i].position, listB[i].exist);
 		i++;
 	}*/
 	/*1if (listA)

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:11 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 12:37:41 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 11:52:18 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,10 @@ t_list	*init_list(int size, char *data[])
 	{
 		list[i - 1].value = ft_atoi(data[i]);
 		list[i - 1].position = i;
+		list[i - 1].exist = 1;
 		i++;
 	}
+	list[i].exist = 0;
 	number_repeat(list);
 	return (list);
 }
@@ -104,6 +106,7 @@ t_list	*init_split(char *split[], char *data)
 	{
 		list[i].value = ft_atoi(split[i]);
 		list[i].position = i + 1;
+		list[i].exist = 1;
 		i++;
 	}
 	while (i >= 0)
@@ -111,6 +114,7 @@ t_list	*init_split(char *split[], char *data)
 		free(split[i]);
 		i--;
 	}
+	list[i].exist = 0;
 	free(split);
 	number_repeat(list);
 	return (list);

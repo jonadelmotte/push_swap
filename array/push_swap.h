@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/15 15:07:58 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 11:50:25 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_list
 	int	value;
 	int	position;
 	int	size;
+	int	exist;
 }		t_list;
 
 // utils(libft)

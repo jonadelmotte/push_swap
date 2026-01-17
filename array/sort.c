@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:02:04 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 12:02:08 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 13:35:28 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	find_next_biggest(t_list *a, int last_biggest)
 
 	i = 0;
 	biggest = find_smaller(a);
-	while (a[i].exist == 1)
+	while (a[i].position)
 	{
 		if (a[i].value > biggest && a[i].value < last_biggest)
 			biggest = a[i].value;

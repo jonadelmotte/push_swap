@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:11 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 11:52:18 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:49:09 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	parsing_single(char *argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (!(ft_isdigit(argv[i]) || argv[i] == ' '
-				|| argv[i] == '-' || argv[i] == '+'))
+		if (!(ft_isdigit(argv[i]) || argv[i] == ' ' || argv[i] == '-'
+				|| argv[i] == '+'))
 		{
 			write(1, "Error\n", 6);
 			exit(1);
@@ -48,26 +48,24 @@ static void	parsing_verif(int argc, char *argv[])
 
 	i = 1;
 	if (argc == 2)
-	{
 		parsing_single(argv[1]);
-	}
 	else if (argc > 2)
 	{
 		while (argv[i])
 		{
-			parsing_single(argv[i]);// a reverifier (1 2 3 "4 6 8 2")
+			parsing_single(argv[i]); // a reverifier (1 2 3 "4 6 8 2")
 			i++;
 		}
 	}
-}
+}// -7 ---7
+//INT_MIN / INT_MAX
 
 t_list	*parsing(int argc, char *argv[])
 {
 	parsing_verif(argc, argv);
 	if (argc > 2)
 		return (init_list(argc, argv));
-	else
-		return (init_split(ft_split(argv[1], ' '), argv[1]));
+	return (init_split(ft_split(argv[1], ' '), argv[1]));
 }
 
 t_list	*init_list(int size, char *data[])

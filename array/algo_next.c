@@ -6,13 +6,13 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:55:51 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 12:08:11 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:20:14 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo_big(t_list *a, t_list *b)
+void	algo_big(t_list *a, t_list *b, int div)
 {
 	int	divided;
 	int	begin;
@@ -20,7 +20,7 @@ void	algo_big(t_list *a, t_list *b)
 	int	size;
 
 	size = strlen_list(a);
-	divided = (size / 5) + (size % 5);
+	divided = (size / div) + (size % div);
 	begin = 1;
 	end = divided;
 	while (begin < size + 1)
@@ -31,31 +31,31 @@ void	algo_big(t_list *a, t_list *b)
 			sort_B(a, b, a[0].value);
 		}
 		push_back(a, b);
-		end += divided - (size % 5);
-		begin += divided - (size % 5);
+		end += divided - (size % div);
+		begin += divided - (size % div);
 	}
 	smart_rotate(a, find_smaller(a));
 }
 
 void	sort_B(t_list *a, t_list *b, int pushed)
 {
-    if (pushed < find_smaller(b))
-    {
-        smart_rotate_B(b, find_biggest(b));
-        pb(a, b);
-    }
-    else
-    {
-	    smart_rotate_B(b, find_next_biggest(b, pushed));
-	    pb(a, b);
-    }
+	if (pushed < find_smaller(b))
+	{
+		smart_rotate_B(b, find_biggest(b));
+		pb(a, b);
+	}
+	else
+	{
+		smart_rotate_B(b, find_next_biggest(b, pushed));
+		pb(a, b);
+	}
 }
 
 void	push_back(t_list *a, t_list *b)
 {
 	smart_rotate_B(b, find_biggest(b));
 	smart_rotate(a, find_next_biggest(a, find_biggest(b)));
-    ra(a);
+	ra(a);
 	while (b[0].position)
 	{
 		pa(a, b);

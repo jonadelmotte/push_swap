@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:19:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 11:55:48 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 13:55:22 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	push(t_list *a, t_list *b)
 {
 	int	i;
 
-	i = 0;
+	i = strlen_list(b);
 	b[i].position = i + 1;
 	b[i].exist = 1;
 	while (i > 0)

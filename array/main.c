@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 09:33:19 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 12:14:19 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:33:54 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,29 @@ int	main(int argc, char *argv[])
 	int		i;
 
 	i = 0;
-	if (argc == 1 || argc == 2)
+	if (argc == 1)
 		return (0);
 	listA = parsing(argc, argv);
 	size = strlen_list(listA); // haha tt changer dans le parcing je crois bien.
 	listB = init_b(size);
 	sort_A(listA);
 	algo_verif(size, listA, listB);
-	/*while (listA[i].position)
+	/*while (listA[i].exist)
 	{
-		i++;
 		printf("value1 = %i, position1 = %i, size1 = %i, exist1 = %i\n", listA[i].value,
 			listA[i].position, listA[i].size, listA[i].exist);
 		i++;
 	}
+	printf("4 = %i\n", listB[4].value);
 	i = 0;
 	printf("\n");
-	while (listB[i].exist)
+	while (listB[i].position)
 	{
 		printf("value2 = %i, position2 = %i, exist2 = %i\n", listB[i].value,
 			listB[i].position, listB[i].exist);
 		i++;
 	}*/
-	/*1if (listA)
-		free(listA);
-	if (listB)
-		free(listB);*/
+	free(listA);
+	free(listB);
 	return (0);
 }

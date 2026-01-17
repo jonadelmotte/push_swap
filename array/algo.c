@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:03:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 12:01:59 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 13:35:58 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	find_smaller(t_list *a)
 
 	i = 0;
 	smaller = a[i].value;
-	while (a[i].exist == 1)
+	while (a[i].position)
 	{
 		if (a[i].value < smaller)
 			smaller = a[i].value;
@@ -89,7 +89,7 @@ int	find_biggest(t_list *a)
 
 	i = 0;
 	biggest = a[i].value;
-	while (a[i].exist == 1)
+	while (a[i].position)
 	{
 		if (a[i].value > biggest)
 			biggest = a[i].value;

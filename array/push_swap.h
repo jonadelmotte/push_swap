@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 11:50:25 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:20:09 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int		find_biggest(t_list *a);
 
 void	algo_test(t_list *a, t_list *b);
 void	debug_rotate(t_list *a, int schr);
-void    algo_big(t_list *a, t_list *b);
+void    algo_big(t_list *a, t_list *b, int div);
 void    sort_B(t_list *a, t_list *b, int pushed);
 void    push_back(t_list *a, t_list *b);
 

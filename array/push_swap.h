@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 14:20:09 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/20 11:51:30 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	rrr(t_list *a, t_list *b);
 // small algo
 void	algo_verif(int size, t_list *listA, t_list *listB);
 void	small_algo_verif(int size, t_list *listA, t_list *listB);
+int		is_already_sorted(t_list *a);
 void	two(t_list *list);
 void	three(t_list *a);
 void	four(t_list *a, t_list *b, int i);
@@ -82,19 +83,19 @@ int		find_biggest(t_list *a);
 
 void	algo_test(t_list *a, t_list *b);
 void	debug_rotate(t_list *a, int schr);
-void    algo_big(t_list *a, t_list *b, int div);
-void    sort_B(t_list *a, t_list *b, int pushed);
-void    push_back(t_list *a, t_list *b);
+void	algo_big(t_list *a, t_list *b, int div);
+void	sort_B(t_list *a, t_list *b, int pushed);
+void	push_back(t_list *a, t_list *b);
 
 // sort
-int	find_next_smallest(t_list *a, int last_smallest);
-int	find_next_biggest(t_list *a, int last_biggest);
-void    sort_A(t_list *a);
-
+int		find_next_smallest(t_list *a, int last_smallest);
+int		find_next_biggest(t_list *a, int last_biggest);
+void	sort_A(t_list *a);
+int	isempty(t_list *a);
 
 // finder
-int find_sorted(t_list *a, int begin, int end);
-int    exist(t_list *a, int begin, int end);
+int		find_sorted(t_list *a, int begin, int end);
+int		exist(t_list *a, int begin, int end);
 
 // push swap visualiseur
 // raditz (pas suffisant)

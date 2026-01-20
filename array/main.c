@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 09:33:19 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 14:33:54 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/20 11:21:32 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 static t_list	*init_b(int size)
 {
 	t_list	*list;
-	int	i;
+	int		i;
 
 	i = 0;
 	list = malloc(sizeof(t_list) * size);
 	if (!list)
 		exit(1);
-	while (i <= size)
+	while (i < size)
 	{
 		list[i].exist = 0;
+		list[i].value = 0;
+		list[i].position = 0;
+		list[i].size = 0;
 		i++;
 	}
 	return (list);
@@ -46,7 +49,8 @@ int	main(int argc, char *argv[])
 	algo_verif(size, listA, listB);
 	/*while (listA[i].exist)
 	{
-		printf("value1 = %i, position1 = %i, size1 = %i, exist1 = %i\n", listA[i].value,
+		printf("value1 = %i, position1 = %i, size1 = %i, exist1 = %i\n",
+			listA[i].value,
 			listA[i].position, listA[i].size, listA[i].exist);
 		i++;
 	}

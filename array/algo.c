@@ -6,22 +6,11 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:03:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/17 13:35:58 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/20 11:21:02 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	algo_test(t_list *a, t_list *b)
-{
-	while (a[0].position)
-	{
-		smart_rotate(a, find_smaller(a));
-		pb(a, b);
-	}
-	while (b[0].position)
-		pa(a, b);
-}
 
 void	smart_rotate(t_list *a, int schr)
 {
@@ -84,8 +73,8 @@ int	find_smaller(t_list *a)
 
 int	find_biggest(t_list *a)
 {
-	int i;
-	int biggest;
+	int	i;
+	int	biggest;
 
 	i = 0;
 	biggest = a[i].value;
@@ -104,7 +93,7 @@ void	debug_rotate(t_list *a, int schr)
 
 	i = 0;
 	if (a[i].value == schr)
-			return ;
+		return ;
 	while (a[i].position)
 	{
 		if (a[i].value == schr)
@@ -112,5 +101,5 @@ void	debug_rotate(t_list *a, int schr)
 		i++;
 	}
 	write(1, "jona t'a merde (smart_rotate)\n", 15);
-	exit (0);
+	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:11 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/20 10:24:56 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 12:19:23 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,9 @@ static void	parsing_verif(int argc, char *argv[])
 			i++;
 		}
 	}
-}// -7 ---7
-//INT_MIN / INT_MAX
+} // -7 ---7
+// INT_MIN / INT_MAX
 // > INT_MAZX
-
 t_list	*parsing(int argc, char *argv[])
 {
 	parsing_verif(argc, argv);

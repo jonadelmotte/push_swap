@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:55:51 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/20 11:51:59 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 16:46:51 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	algo_big(t_list *a, t_list *b, int div)
 			sort_B(a, b, a[0].value);
 		}
 		push_back(a, b);
-		end += divided - (size % div);
-		begin += divided - (size % div);
+		end += divided/* - (size % div)*/;
+		begin += divided/* - (size % div)*/;
 	}
 	smart_rotate(a, find_smaller(a));
 }

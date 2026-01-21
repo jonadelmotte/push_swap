@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:20 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/20 11:48:51 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 16:50:09 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	algo_verif(int size, t_list *listA, t_list *listB)
 	if (size <= 5)
 		small_algo_verif(size, listA, listB);
 	else if (size <= 400)
-		algo_big(listA, listB, 4);
+		algo_big(listA, listB, 5);
 	else if (size >= 400)
-		algo_big(listA, listB, 9);
+		algo_big(listA, listB, 11);
 }
 
 void	small_algo_verif(int size, t_list *listA, t_list *listB)

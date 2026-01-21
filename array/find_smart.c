@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:16:40 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 12:19:29 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:04:49 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	find_sorted(t_list *a, int begin, int end)
 
 int	exist(t_list *a, int begin, int end)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (a[i].position)

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:02 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 15:48:08 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:07:45 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,32 +69,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ft_bzero(tab, (nmemb * size));
 	return (tab);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*t;
-	size_t			m;
-
-	t = (unsigned char *)s;
-	m = 0;
-	while (m < n)
-	{
-		t[m] = '\0';
-		m++;
-	}
-}
-int	strlen_list(t_list *list)
-{
-	int	i;
-
-	i = 0;
-	while (list[i].exist == 1)
-		i++;
-	return (i);
-}
-
-int	intcmp(int a, int b)
-{
-	return (a - b);
 }

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:43:52 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 15:46:15 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:05:34 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,10 @@ void	push_back(t_list *a, t_list *b);
 int		find_next_smallest(t_list *a, int last_smallest);
 int		find_next_biggest(t_list *a, int last_biggest);
 void	sort_A(t_list *a);
-int	isempty(t_list *a);
+int		isempty(t_list *a);
 
 // finder
 int		find_sorted(t_list *a, int begin, int end);
 int		exist(t_list *a, int begin, int end);
-
-// push swap visualiseur
-// raditz (pas suffisant)
 
 #endif

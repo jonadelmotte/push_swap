@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 09:33:19 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 15:48:24 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:26:11 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ static t_list	*init_b(int size)
 
 int	main(int argc, char *argv[])
 {
-	t_list	*listA;
-	t_list	*listB;
+	t_list	*a;
+	t_list	*b;
 	int		size;
 	int		i;
 
 	i = 0;
 	if (argc == 1)
 		return (0);
-	listA = parsing(argc, argv);
-	size = strlen_list(listA); // haha tt changer dans le parcing je crois bien.
-	listB = init_b(size);
-	sort_A(listA);
-	algo_verif(size, listA, listB);
+	a = parsing(argc, argv);
+	size = strlen_list(a); // haha tt changer dans le parcing je crois bien.
+	b = init_b(size);
+	sort_A(a);
+	algo_verif(size, a, b);
 	/*while (listA[i].exist)
 	{
 		printf("value1 = %i, position1 = %i, size1 = %i, exist1 = %i\n",
@@ -63,7 +63,7 @@ int	main(int argc, char *argv[])
 			listB[i].position, listB[i].exist);
 		i++;
 	}*/
-	free(listA);
-	free(listB);
+	free(a);
+	free(b);
 	return (0);
 }

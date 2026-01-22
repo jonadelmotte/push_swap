@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push_swap_utils_next.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 15:19:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 17:06:19 by jdelmott         ###   ########.fr       */
+/*   Created: 2026/01/21 17:06:44 by jdelmott          #+#    #+#             */
+/*   Updated: 2026/01/22 15:01:19 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_list *a)
+void	ft_bzero(void *s, size_t n)
 {
-	int	swap;
+	unsigned char	*t;
+	size_t			m;
 
-	swap = a[0].value;
-	a[0].value = a[1].value;
-	a[1].value = swap;
-	swap = a[0].size;
-	a[0].size = a[1].size;
-	a[1].size = swap;
-}
-void	sa(t_list *a)
-{
-	swap(a);
-	write(1, "sa\n", 3);
+	t = (unsigned char *)s;
+	m = 0;
+	while (m < n)
+	{
+		t[m] = '\0';
+		m++;
+	}
 }
 
-void	sb(t_list *b)
+int	strlen_list(t_list *list)
 {
-	swap(b);
-	write(1, "sb\n", 3);
+	int	i;
+
+	i = 0;
+	while (list[i].exist == 1)
+		i++;
+	return (i);
 }
 
-void	ss(t_list *a, t_list *b)
+long int	intcmp(long int a, long int b)
 {
-	swap(a);
-	swap(b);
-	write(1, "ss\n", 3);
+	if (b == -2147483648 || a == 2147483647)
+		return (1);
+	if (a == -2147483648 || b == 2147483647)
+		return (-1);
+	return (a - b);
 }

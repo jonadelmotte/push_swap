@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:03:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 17:04:42 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:58:48 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	smart_rotate(t_list *a, int schr)
 	}
 }
 
-void	smart_rotate_B(t_list *a, int schr)
+void	smart_rotate_b(t_list *a, int schr)
 {
 	int	size;
 	int	i;

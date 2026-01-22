@@ -6,34 +6,36 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:20 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 17:04:44 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/22 09:18:44 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo_verif(int size, t_list *listA, t_list *listB)
+void	algo_verif(int size, t_list *a, t_list *b)
 {
-	if (is_already_sorted(listA) == 1)
+	if (is_already_sorted(a) == 1)
 		return ;
 	if (size <= 5)
-		small_algo_verif(size, listA, listB);
+		small_algo_verif(size, a, b);
 	else if (size <= 400)
-		algo_big(listA, listB, 5);
-	else if (size >= 400)
-		algo_big(listA, listB, 11);
+		algo_big(a, b, 5);
+	else if (size <= 1000)
+		algo_big(a, b, 11);
+	else if (size >= 1000)
+		algo_big(a, b, 25);
 }
 
-void	small_algo_verif(int size, t_list *listA, t_list *listB)
+void	small_algo_verif(int size, t_list *a, t_list *b)
 {
 	if (size == 2)
-		two(listA);
+		two(a);
 	if (size == 3)
-		three(listA);
+		three(a);
 	if (size == 4)
-		four(listA, listB, 0);
+		four(a, b, 0);
 	if (size == 5)
-		five(listA, listB);
+		five(a, b);
 }
 
 int	is_already_sorted(t_list *a)

@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils_next.c                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 17:06:44 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 17:07:26 by jdelmott         ###   ########.fr       */
+/*   Created: 2026/01/12 15:19:53 by jdelmott          #+#    #+#             */
+/*   Updated: 2026/01/22 15:00:47 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_bzero(void *s, size_t n)
+void	swap(t_list *a)
 {
-	unsigned char	*t;
-	size_t			m;
+	int	swap;
 
-	t = (unsigned char *)s;
-	m = 0;
-	while (m < n)
-	{
-		t[m] = '\0';
-		m++;
-	}
-}
-int	strlen_list(t_list *list)
-{
-	int	i;
-
-	i = 0;
-	while (list[i].exist == 1)
-		i++;
-	return (i);
+	swap = a[0].value;
+	a[0].value = a[1].value;
+	a[1].value = swap;
+	swap = a[0].size;
+	a[0].size = a[1].size;
+	a[1].size = swap;
 }
 
-int	intcmp(int a, int b)
+void	sa(t_list *a)
 {
-	return (a - b);
+	swap(a);
+	write(1, "sa\n", 3);
+}
+
+void	sb(t_list *b)
+{
+	swap(b);
+	write(1, "sb\n", 3);
+}
+
+void	ss(t_list *a, t_list *b)
+{
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:02:04 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 17:06:15 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:57:28 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	find_next_biggest(t_list *a, int last_biggest)
 	return (biggest);
 }
 
-void	sort_A(t_list *a)
+void	sort_a(t_list *a)
 {
 	int	i;
 	int	size;

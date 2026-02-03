@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:03:53 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/22 14:58:48 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:19:39 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	smart_rotate(t_list *a, int schr)
 
 	i = 0;
 	size = strlen_list(a) / 2;
-	debug_rotate(a, schr);
 	while (a[i].value != schr)
 		i++;
 	if (a[i].position - size <= 0)
@@ -85,21 +84,4 @@ int	find_biggest(t_list *a)
 		i++;
 	}
 	return (biggest);
-}
-
-void	debug_rotate(t_list *a, int schr)
-{
-	int	i;
-
-	i = 0;
-	if (a[i].value == schr)
-		return ;
-	while (a[i].position)
-	{
-		if (a[i].value == schr)
-			return ;
-		i++;
-	}
-	write(1, "jona t'a merde (smart_rotate)\n", 15);
-	exit(0);
 }

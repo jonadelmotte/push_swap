@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:16:40 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/02/03 10:19:56 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:27:00 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	find_up(t_list *a, int begin, int end)
 		}
 		i++;
 	}
+	return (-1);
 }
 
 static int	find_down(t_list *a, int begin, int end)
@@ -44,6 +45,7 @@ static int	find_down(t_list *a, int begin, int end)
 		}
 		size--;
 	}
+	return (-1);
 }
 
 int	find_index(t_list *a, int value)

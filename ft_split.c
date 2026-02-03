@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 11:44:04 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/21 17:04:55 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:23:05 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	**split_free(char **split, int k)
 	while (k--)
 		free(split[k]);
 	free(split);
-	return (NULL);
+	exit (1);
 }
 
 int	count_words(char const *s, char c)
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	words = count_words(s, c);
 	split = (char **)ft_calloc(sizeof(char *), (words + 2));
 	if (split == NULL)
-		return (0);
+		exit (1);
 	if (!s[0])
 		return (split);
 	return (mathilda(split, s, c));

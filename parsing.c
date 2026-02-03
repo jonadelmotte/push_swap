@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:11 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/26 13:54:13 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:25:52 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list	*init_list(int size, char *data[])
 	i = 0;
 	list = malloc(sizeof(t_list) * (size));
 	if (!list)
-		return (NULL);
+		exit (1);
 	while (i < size - 1)
 	{
 		limits(list, data[i + 1]);
@@ -54,9 +54,7 @@ t_list	*init_split(char *split[], int size)
 
 	i = 0;
 	limits_split(split, size);
-	list = malloc(sizeof(t_list) * (size + 1));
-	if (!list)
-		return (NULL);
+	list = ft_calloc(sizeof(t_list), (size + 1));
 	while (i < size)
 	{
 		list[i].value = (int)ft_atoi(split[i]);

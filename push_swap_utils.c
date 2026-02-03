@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:00:02 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/22 14:56:08 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:23:19 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	tab = (void *)malloc(nmemb * size);
 	if (!tab)
-		return (NULL);
+		exit (1);
 	ft_bzero(tab, (nmemb * size));
 	return (tab);
 }

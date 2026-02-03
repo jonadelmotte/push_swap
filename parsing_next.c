@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 10:00:40 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/01/22 16:21:15 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:02:29 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	parsing_single(char *argv)
 		if (!(ft_isdigit(argv[i]) || argv[i] == ' ' || argv[i] == '-'
 				|| argv[i] == '+'))
 		{
-			write(1, "Error\n", 6);
-			exit(1);
+			write(2, "Error\n", 6);
+			exit(0);
 		}
 		if ((argv[i] == '-' && !ft_isdigit(argv[i + 1])) || (argv[i] == '+'
 				&& !ft_isdigit(argv[i + 1])))
 		{
-			write(1, "Error\n", 6);
-			exit(1);
+			write(2, "Error\n", 6);
+			exit(0);
 		}
 		i++;
 	}
@@ -66,8 +66,8 @@ void	number_repeat(t_list *a)
 			if (a[i].value == a[j].value)
 			{
 				free(a);
-				write(1, "Error\n", 6);
-				exit(1);
+				write(2, "Error\n", 6);
+				exit(-1);
 			}
 			j++;
 		}
@@ -83,8 +83,8 @@ void	limits(t_list *a, char *data)
 	if (num > 2147483647 || num < -2147483648)
 	{
 		free(a);
-		write(1, "Error\n", 6);
-		exit(1);
+		write(2, "Error\n", 6);
+		exit(0);
 	}
 }
 
@@ -103,8 +103,8 @@ void	limits_split(char *split[], int size)
 			while (i >= 0)
 				free(split[i--]);
 			free(split);
-			write(1, "Error\n", 6);
-			exit(1);
+			write(2, "Error\n", 6);
+			exit(0);
 		}
 		i++;
 	}
